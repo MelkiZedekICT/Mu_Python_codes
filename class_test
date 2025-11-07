@@ -1,0 +1,116 @@
+import numpy as np
+
+# Create a 4x4 matrix with values from 1 to 16
+matrix = np.arange(1, 17).reshape(4, 4)
+
+# Extract the first two rows
+first_two_rows = matrix[:2, :]
+
+print("Matrix:\n", matrix)
+print("\nFirst two rows:\n", first_two_rows)
+
+
+import numpy as np
+
+# Create a 5x5 matrix with values from 1 to 25
+matrix = np.arange(1, 26).reshape(5, 5)
+
+# Extract the middle 3x3 submatrix
+middle_submatrix = matrix[1:4, 1:4]
+
+print("Matrix:\n", matrix)
+print("\nMiddle 3x3 submatrix:\n", middle_submatrix)
+
+
+import numpy as np
+
+# Create a 5x5 matrix with values from 1 to 25
+matrix = np.arange(1, 26).reshape(5, 5)
+
+# Extract all even elements
+even_elements = matrix[matrix % 2 == 0]
+
+print("Matrix:\n", matrix)
+print("\nEven elements:\n", even_elements)
+
+
+text = "PythonProgramming"
+
+# Extract "Python"
+result = text[:6]
+
+print(result)
+
+import numpy as np
+
+# Create two arrays
+array1 = np.array([1, 2, 3])
+array2 = np.array([4, 5, 6])
+
+# Append the arrays
+result = np.append(array1, array2)
+
+print("Array 1:", array1)
+print("Array 2:", array2)
+print("Appended Array:", result)
+
+
+import numpy as np
+
+# Create the array
+arr = np.array([10, 5, 8, 3])
+
+# Sort in ascending order
+sorted_arr = np.sort(arr)
+
+print("Original Array:", arr)
+print("Sorted Array:", sorted_arr)
+
+
+import numpy as np
+
+# Create a 4x4 matrix with values from 1 to 16
+matrix = np.arange(1, 17).reshape(4, 4)
+
+# Extract the border elements into a 1D array
+border_elements = np.concatenate((
+    matrix[0, :],           # Top row
+    matrix[1:-1, -1],       # Right column (excluding corners)
+    matrix[-1, ::-1],       # Bottom row (reversed)
+    matrix[1:-1, 0][::-1]   # Left column (excluding corners, reversed)
+))
+
+print("Matrix:\n", matrix)
+print("\nBorder elements (1D array):\n", border_elements)
+
+
+import numpy as np
+
+# Create a 1D array of length 100 (values from 1 to 100 for clarity)
+arr = np.arange(1, 101)
+
+# Replace every 5th element with 0
+arr[4::5] = 0   # 4::5 means start at index 4, step by 5
+
+print(arr)
+
+
+import numpy as np
+
+# Create an example array
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+# Replace even numbers with 0
+arr[arr % 2 == 0] = 0
+
+print(arr)
+
+
+
+
+
+
+
+
+
+
