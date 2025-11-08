@@ -1,0 +1,48 @@
+import pyttsx3
+
+#we have to initialise a variable to carry out functions.
+txt_speech = pyttsx3.init()
+
+user_input = input("Enter text to convert it into speech")
+txt_speech.say(user_input)
+txt_speech.runAndWait()
+
+
+import pyttsx3
+import speech_recognition as sr
+
+# initialize text-to-speech engine
+engine = pyttsx3.init()
+
+def text_to_speech():
+    text = input("Enter text to convert into speech: ")
+    engine.say(text)
+    engine.runAndWait()
+
+def speech_to_text():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Speak something...")
+        recognizer.adjust_for_ambient_noise(source)
+        audio = recognizer.listen(source)
+    try:
+        text = recognizer.recognize_google(audio)
+        print("You said:", text)
+    except:
+        print("Sorry, could not recognize your voice.")
+
+while True:
+    print("\n1. Text to Speech")
+    print("2. Speech to Text")
+    print("3. Exit")
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        text_to_speech()
+    elif choice == '2':
+        speech_to_text()
+    elif choice == '3':
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice! Try again.")
