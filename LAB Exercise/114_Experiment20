@@ -1,0 +1,31 @@
+#Audio Visualization:
+import soundfile as sf 
+audio,sample_rate = sf.read(r'"D:\Academics\PWP\exp20\audio_file.wav"')
+sf.write('new_audio_file.wav', audio, sample_rate)
+
+import matplotlib.pyplot as plt
+import numpy as np
+import soundfile as sf
+
+# Create time axis
+time = np.arange(0, len(audio)) / sample_rate
+
+# Plot audio signal
+plt.plot(time, audio)
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.show()
+
+
+#Audio Effects
+pip install pydub
+from pydub import AudioSegment
+
+# Load audio file
+audio = AudioSegment.from_file('audio_file.wav')
+
+# Add fade in effect
+audio_fade_in = audio.fade_in(2000)  # 2 seconds
+
+# Export audio file with fade in effect
+audio_fade_in.export('audio_file_fade_in.wav', format='wav')
